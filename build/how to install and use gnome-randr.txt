@@ -1,0 +1,17 @@
+# how to install gnome-randr binary
+# skip the first two commands if you just want to install the binary
+
+sudo apt install pkg-config cargo dbus-devel
+cargo install gnome-randr
+
+sudo cp gnome-randr /usr/local/bin/gnome-randr
+sudo chown --reference=/usr/bin/nano /usr/local/bin/gnome-randr
+sudo chmod --reference=/usr/bin/nano /usr/local/bin/gnome-randr
+
+gnome-randr query
+gnome-randr modify eDP-1 --rotate normal
+gnome-randr modify eDP-1 --rotate inverted
+gnome-randr modify eDP-1 --rotate left
+gnome-randr modify eDP-1 --rotate right
+
+
